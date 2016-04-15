@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Ara2.AraLabel")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Ara Label")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Ara2FrameWork")]
 [assembly: AssemblyProduct("Ara2.AraLabel")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Copyright (c) 2010-2016, Rafael Leonel Pontani. All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
