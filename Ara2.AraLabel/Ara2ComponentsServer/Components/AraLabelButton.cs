@@ -13,7 +13,7 @@ namespace Ara2.Components
     [Serializable]
     public class AraLabelButton
     {
-        AraObjectInstance<AraLabel> _Label= new AraObjectInstance<AraLabel>();
+        AraObjectInstance<AraLabel> _Label = new AraObjectInstance<AraLabel>();
         private AraLabel Label
         {
             get { return _Label.Object; }
@@ -45,8 +45,8 @@ namespace Ara2.Components
 
         public enum SStyleButton
         {
-            Button=1,
-            Link=2
+            Button = 1,
+            Link = 2
         }
 
         public delegate void Click_delegate(AraLabel Object, System.Collections.Hashtable Parans);
@@ -65,14 +65,14 @@ namespace Ara2.Components
             return Add(vCaption, ButtonIco.None, Parans, Click);
         }
 
-        public string Add(string vCaption, Hashtable Parans, Click_delegate Click,SStyleButton Style)
+        public string Add(string vCaption, Hashtable Parans, Click_delegate Click, SStyleButton Style)
         {
             return Add(vCaption, ButtonIco.None, Parans, Click, Style);
         }
-        
+
         public string Add(string vCaption, ButtonIco Ico, Hashtable Parans, Click_delegate Click)
         {
-            return Add(vCaption, Ico, Parans, Click,SStyleButton.Button);
+            return Add(vCaption, Ico, Parans, Click, SStyleButton.Button);
         }
 
         public string Add(string vCaption, ButtonIco Ico, Hashtable Parans, Click_delegate Click, SStyleButton Style)
@@ -95,9 +95,19 @@ namespace Ara2.Components
             return Add<T>(vCaption, Ico, SStyleButton.Button, vEvent, vParametros);
         }
 
+        public string Add<T>(ButtonIco Ico, T vEvent, params object[] vParametros)
+        {
+            return Add<T>("", Ico, SStyleButton.Button, vEvent, vParametros);
+        }
+
         public string Add<T>(string vCaption, ButtonIco Ico, SStyleButton Style, T vEvent, params object[] vParametros)
         {
             return Add<T>("#", vCaption, Ico, Style, vEvent, vParametros);
+        }
+
+        public string Add<T>(ButtonIco Ico, SStyleButton Style, T vEvent, params object[] vParametros)
+        {
+            return Add<T>("#", "", Ico, Style, vEvent, vParametros);
         }
 
         public string Add<T>(string vHref, string vCaption, ButtonIco Ico, SStyleButton Style, T vEvent, params object[] vParametros)
@@ -165,7 +175,7 @@ namespace Ara2.Components
             return vReturn;
         }
 
-        
+
 
         public void RunEventClick(int vCod)
         {
